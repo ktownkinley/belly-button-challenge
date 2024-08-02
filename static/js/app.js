@@ -41,7 +41,7 @@ function buildCharts(sample) {
     let sample_values = result.sample_values;
 
     // Build a Bubble Chart
-    let layout = {
+    let bubbleLayout = {
       title: "Bacteria Cultures Per Sample",
       margin: {t: 0},
       hovermode: "closest",
@@ -50,7 +50,7 @@ function buildCharts(sample) {
       margin: {t: 30}
     };
 
-    let data = [
+    let bubbleData = [
       {
         x: otu_ids,
         y: sample_values,
@@ -65,7 +65,7 @@ function buildCharts(sample) {
     ];
 
     // Render the Bubble Chart
-    Plotly.newPlot("bubble", data, layout);
+    Plotly.newPlot("bubble", bubbleData, bubbleLayout);
 
     // For the Bar Chart, map the otu_ids to a list of strings for your yticks
     let yticks = otu_ids.map(otuID => `OTU ${otuID} `);
